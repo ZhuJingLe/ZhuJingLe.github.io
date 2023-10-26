@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/moment.min.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
 <body>
-  <div>hhh</div>
+  <div class="container">
+    <b id="time"></b>
+  </div>
+  <script>
+    let beginTime = moment('2023-10-05 20:01:00', 'YYYY-MM-DD HH:mm:ss');
+    function calculateTime() {
+      let nowTime = moment().format('YYYY-MM-DD HH:mm:ss')
+      let days = moment(nowTime).diff(moment(beginTime), 'days');
+      let hours = moment(nowTime).diff(moment(beginTime), 'hours')%24;
+      let minutes = moment(nowTime).diff(moment(beginTime), 'minutes')%60;
+      let seconds = moment(nowTime).diff(moment(beginTime), 'seconds')%60;
+      return `${days} 天-${hours} 小时-${minutes} 分钟-${seconds} 秒`
+    }
+    window.onload = function() {
+      $('#time').html('相识第 ' + calculateTime())
+      setInterval(() => {
+        $('#time').html('相识第 ' + calculateTime())
+      }, 1000);
+    }
+  </script>
 </body>
+</html>
