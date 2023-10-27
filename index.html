@@ -14,7 +14,8 @@
     <b id="time"></b>
   </div>
   <script>
-    let beginTime = moment('2023-10-05 20:01:00', 'YYYY-MM-DD HH:mm:ss');
+    let beginTime = moment('2023-10-05 20:01:42', 'YYYY-MM-DD HH:mm:ss');
+
     function calculateTime() {
       let nowTime = moment().format('YYYY-MM-DD HH:mm:ss')
       let days = moment(nowTime).diff(moment(beginTime), 'days');
@@ -23,10 +24,15 @@
       let seconds = moment(nowTime).diff(moment(beginTime), 'seconds')%60;
       return `${days} 天 - ${hours<10?'0'+hours:hours} 小时 - ${minutes<10?'0'+minutes:minutes} 分钟 - ${seconds<10?'0'+seconds:seconds} 秒`
     }
+
+    function getContent(timeStr) {
+      return '<span style="color: red">❤</span> ' + '我们相识的第 ' + timeStr + ' <span style="color: red">❤</span>';
+    }
+
     window.onload = function() {
-      $('#time').text('我们相识的第 ' + calculateTime())
+      $('#time').html(getContent(calculateTime()))
       setInterval(() => {
-        $('#time').text('我们相识的第 ' + calculateTime())
+        $('#time').html(getContent(calculateTime()))
       }, 1000);
     }
   </script>
