@@ -24,9 +24,9 @@
       return `${days} 天 - ${hours<10?'0'+hours:hours} 小时 - ${minutes<10?'0'+minutes:minutes} 分钟 - ${seconds<10?'0'+seconds:seconds} 秒`
     }
     window.onload = function() {
-      $('#time').html('相识第 ' + calculateTime())
+      $('#time').text('我们相识的第 ' + calculateTime())
       setInterval(() => {
-        $('#time').html('相识第 ' + calculateTime())
+        $('#time').text('我们相识的第 ' + calculateTime())
       }, 1000);
     }
   </script>

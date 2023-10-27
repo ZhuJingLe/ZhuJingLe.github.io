@@ -1,13 +1,23 @@
+@font-face {
+  font-family: 'WDSYZ';
+  src: url('../fonts/WDSYZ.woff2') format('woff2'),
+      url('../fonts/WDSYZ.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   background-color: black;
+  font-family: 'WDSYZ';
 }
 .container {
   text-align: center;
   padding: 20% 0;
 }
 .container #time {
-  font-size: 20px;
+  font-size: 35px;
   color: #fff;
 }
