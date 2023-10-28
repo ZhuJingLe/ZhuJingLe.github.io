@@ -21,3 +21,16 @@ body, html {
   font-size: 25px;
   color: #fff;
 }
+
+.heart {
+  animation: heartDance 1s ease-in-out infinite;
+}
+
+@keyframes heartDance {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
