@@ -1,7 +1,7 @@
 var SCREEN_WIDTH = window.innerWidth,
   SCREEN_HEIGHT = window.innerHeight,
   mousePos = {
-    x: 900,
+    x: SCREEN_WIDTH / 2,
     y: 300
   },
   // create canvas
@@ -13,12 +13,9 @@ var SCREEN_WIDTH = window.innerWidth,
   colorCode = 0;
 
 // init
-window.onload = function () {
-  canvas.width = SCREEN_WIDTH;
-  canvas.height = SCREEN_HEIGHT;
-  setInterval(launch, 800);
-  setInterval(loop, 1000 / 50);
-};
+// window.onload = function () {
+  
+// };
 // update mouse position
 // window.document.onmousemove = function (e) {
 //   e.preventDefault();
@@ -43,9 +40,9 @@ function launchFrom(x) {
   if (rockets.length < 100) {
     var rocket = new Rocket(x);
     console.log(rocket);
-    rocket.explosionColor = Math.floor((Math.random() * 360) / 10) * 10;
-    rocket.vel.y = Math.random() * -3 - 4;
-    rocket.vel.x = Math.random() * 6 - 3;
+    rocket.explosionColor = Math.floor((Math.random() * 360) / 10) * 10; // 0 ~ 360
+    rocket.vel.y = Math.random() * -3 - 4; // -4 ~ -7
+    rocket.vel.x = Math.random() * 6 - 3; // -3 ~ 3
     rocket.size = 8;
     rocket.shrink = 0.999;
     rocket.gravity = 0.01;

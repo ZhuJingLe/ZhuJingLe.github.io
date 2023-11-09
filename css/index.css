@@ -16,6 +16,11 @@ body, html {
 .container {
   text-align: center;
   padding: 20% 0;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 .container #time {
   font-size: 25px;
@@ -24,6 +29,13 @@ body, html {
 
 .heart {
   animation: heartDance 1s ease-in-out infinite;
+}
+
+#fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 @keyframes heartDance {
