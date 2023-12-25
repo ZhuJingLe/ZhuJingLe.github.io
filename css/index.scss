@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Xiangjiao-dajiangjunlingganti';
+    src: url('../fonts/Xiangjiaodajiangjunlingganti.woff2') format('woff2'),
+        url('../fonts/Xiangjiaodajiangjunlingganti.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --theme-color: #884898;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Xiangjiao-dajiangjunlingganti';
+    background-color: #fff;
+    
+}
+
+.container {
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    #time {
+        font-size: 20px;
+        color: var(--theme-color);
+
+        .heart {
+            animation: heartDance 1s ease-in-out infinite;
+        }
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+
+    .historyItem {
+        padding-top: 20px;
+        position: relative;
+        .basicInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: 10px 10%;
+            span {
+                font-size: 20px;
+                color: var(--theme-color);
+                margin-bottom: 5px;
+            }
+        }
+        .num {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 10px;
+            color: #fff;
+            background-color: var(--theme-color);
+            border-bottom-left-radius: 5px
+        }
+    }
+    .my-pagination-current {
+        color: var(--theme-color);
+    }
+}
+
+
+
+@keyframes heartDance {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

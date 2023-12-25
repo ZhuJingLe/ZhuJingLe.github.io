@@ -1,41 +1,77 @@
 @font-face {
   font-family: 'Xiangjiao-dajiangjunlingganti';
-  src: url('../fonts/Xiangjiaodajiangjunlingganti.woff2') format('woff2'),
-      url('../fonts/Xiangjiaodajiangjunlingganti.woff') format('woff');
+  src: url("../fonts/Xiangjiaodajiangjunlingganti.woff2") format("woff2"), url("../fonts/Xiangjiaodajiangjunlingganti.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-body, html {
+:root {
+  --theme-color: #884898;
+}
+
+body,
+html {
   margin: 0;
   padding: 0;
-  background-color: black;
   font-family: 'Xiangjiao-dajiangjunlingganti';
+  background-color: #fff;
 }
+
 .container {
   text-align: center;
-  padding: 20% 0;
   position: absolute;
   z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
 }
+
 .container #time {
-  font-size: 25px;
-  color: #fff;
+  font-size: 20px;
+  color: var(--theme-color);
 }
 
-.heart {
+.container #time .heart {
   animation: heartDance 1s ease-in-out infinite;
 }
 
-#fireworks {
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.swiper .historyItem {
+  padding-top: 20px;
+  position: relative;
+}
+
+.swiper .historyItem .basicInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px 10%;
+}
+
+.swiper .historyItem .basicInfo span {
+  font-size: 20px;
+  color: var(--theme-color);
+  margin-bottom: 5px;
+}
+
+.swiper .historyItem .num {
   position: absolute;
+  right: 0;
   top: 0;
-  left: 0;
-  z-index: 10;
+  padding: 10px;
+  color: #fff;
+  background-color: var(--theme-color);
+  border-bottom-left-radius: 5px;
+}
+
+.swiper .my-pagination-current {
+  color: var(--theme-color);
 }
 
 @keyframes heartDance {
