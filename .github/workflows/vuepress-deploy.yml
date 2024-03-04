@@ -5,14 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@main
 
     - name: vuepress-deploy
-      uses: ZhuJingLe/ZhuJingLe.github.io@master
+      uses: ZhuJingLe/ZhuJingLe.github.io@main
       env:
         ACCESS_TOKEN: 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
         TARGET_REPO: ZhuJingLe/ZhuJingLe.github.io
-        TARGET_BRANCH: master
+        TARGET_BRANCH: main
         BUILD_SCRIPT: yarn && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist
         # CNAME: https://www.xxx.com
