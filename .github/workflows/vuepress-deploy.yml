@@ -12,7 +12,7 @@ jobs:
       env:
         ACCESS_TOKEN: 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
         TARGET_REPO: ZhuJingLe/ZhuJingLe.github.io
-        # TARGET_BRANCH: main
+        TARGET_BRANCH: gh_pages
         BUILD_SCRIPT: yarn && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist
         # CNAME: https://www.xxx.com
