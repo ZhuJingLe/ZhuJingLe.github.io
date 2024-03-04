@@ -1,18 +1,16 @@
-name: Build and Deploy
-on: [push]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@main
-
-    - name: vuepress-deploy
-      uses: ZhuJingLe/ZhuJingLe.github.io@main
-      env:
-        ACCESS_TOKEN: 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
-        TARGET_REPO: ZhuJingLe/ZhuJingLe.github.io
-        TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: yarn && yarn docs:build
-        BUILD_DIR: docs/.vuepress/dist
-        # CNAME: https://www.xxx.com
+name: Run Script on Push  
+  
+on:  
+  push:  
+    branches: [ main ]  
+  
+jobs:  
+  run-script:  
+    runs-on: ubuntu-latest  
+    steps:  
+    - name: Checkout repository  
+      uses: actions/checkout@main 
+    - name: Run your script  
+      run: |  
+        chmod +x deploy.sh 
+        ./deploy.sh
