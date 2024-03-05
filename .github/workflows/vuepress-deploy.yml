@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@main
 
     - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
+      uses: ZhuJingLe/vuepress-deploy@main
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_BRANCH: gh-pages
