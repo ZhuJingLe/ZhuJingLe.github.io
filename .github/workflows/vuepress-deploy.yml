@@ -5,6 +5,9 @@ on:
     branches:
       - main  # 触发主分支的推送事件
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
