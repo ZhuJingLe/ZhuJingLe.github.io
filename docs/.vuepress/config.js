@@ -1,9 +1,24 @@
+let moment = require('moment');
+
 module.exports = {
     base: '/',
     title: "frontEnd blog",
     description: 'html, css, js, vue, node, react etc.',
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
+    ],
+    plugins: [
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp, lang) => {
+                    // 不要忘了安装 moment
+                    const moment = require('moment')
+                    moment.locale(lang)
+                    return moment(timestamp).format('yyyy-MM-DD HH:mm:ss')
+                }
+            }
+        ]
     ],
     themeConfig: {
         lastUpdated: '最后更新时间',

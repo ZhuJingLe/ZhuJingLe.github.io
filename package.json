@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "vuepress": "^1.9.10"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
   }
 }
