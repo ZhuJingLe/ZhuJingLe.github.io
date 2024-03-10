@@ -16,7 +16,7 @@ module.exports = {
                 path: '/css/',      
                 sidebarDepth: 1,    
                 children: [
-                    ['css/', '第一篇'], 
+                    ['css/', '【面试】第一篇'], 
                     ['css/README_02', '第二篇']
                 ]
             },
