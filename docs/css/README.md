@@ -58,5 +58,139 @@
 ![4](/css/01/4.gif)
 
 
-<!-- ## 3.BFC 是什么？及其应用有哪些？
-> BFC 全称为 block formatting context, -->
+## 3.BFC 是什么？及其应用有哪些？
+> BFC 全称为 block formatting context, 译为 **块格式化上下文** ，它是 web 页面可视 css 渲染的一部分， 是块级盒子的布局过程发生的区域，这个区域有它自己的渲染规则，它决定了区域内部元素如何布局，以及与区域外的其他元素的关系和相互作用。
+
+### 创建 BFC 的主要方法
++ 浮动元素 （float 值不为 none 的元素）
++ 定位元素（position 值为 absolute 或 fixed）
++ 行内块元素（display 值为 inline-block）
++ overflow 值不为 visible 或 clip 的块级元素
+
+### BFC 的作用
+> 主要有三点： 1. 解决子元素浮动（float）导致父元素区域坍塌的问题. 2. 解决浮动元素引起元素重叠的问题。 3.防止外边距重叠。
+
+1. 解决子元素浮动（float）导致父元素区域坍塌的问题.
+> 类为 box 的元素包含一个类为 float 的浮动元素，由于浮动元素脱离了正常文档流，又由于浮动元素比周围的元素都要高，所以浮动元素会溢出父元素 box。
+```html
+<!-- css -->
+<style>
+    .box {
+        width: 400px;
+        background-color: pink;
+    }
+    .float {
+        float: left;
+        border: 1px solid #000;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<!-- html -->
+<div class="box">
+    <div class="float">float 元素</div>
+    <div class="normal">正常元素</div>
+</div>
+```
+
+![5](/css/01/5.png)
+
+解决方法：将父元素 box 设置为 BFC 区域，那么它的浮动子元素也将参与 BCF 区域高度的计算，这样就不会出现浮动元素溢出的情况。
+尝试为 box 添加一个 overflow: hidden; 属性。
+
+```html
+<style>
+    .box {
+        ...
+        overflow: hidden;
+        /* 或设置为 display: flow-root */
+    }
+</style>
+```
+
+![6](/css/01/6.png)
+
+2. 解决浮动元素引起元素重叠的问题
+> 由于 box 为浮动元素脱离了正常的文档流，所有 box2 会与 box 发生重叠
+```html
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        float: left;
+    }
+    .box2 {
+        width: 400px;
+        height: 100px;
+        background-color: chocolate;
+    }
+</style>
+<div class="box">
+    box
+</div>
+<div class="box2">
+    box2
+</div>
+```
+![7](/css/01/07.png)
+
+解决方法：将 box2 设置为 BFC ，因为正常文档流中创建的 BFC 不得与元素本身所在的块格式上下文中的任何浮动元素的外边距重叠。
+```html
+<style>
+    .box2 {
+        ...
+        overflow: hidden;
+    }
+</style>
+```
+![8](/css/01/8.png)
+
+3. 防止外边距重叠
+> box 和 box2 的外边距（margin）都为 10px，两者相距 10px 不是我们期望的 20px。
+
+```html
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 10px;
+    }
+    .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: chocolate;
+        margin: 10px;
+    }
+</style>
+<div class="box">
+    box
+</div>
+<div class="box2">
+    box2
+</div>
+```
+![9](/css/01/9.png)
+
+解决方法： 将 box 或 box2 包裹在一个 BFC 块中, 防止外边距重叠。
+
+```html
+<div style="overflow: hidden;">
+    <div class="box2">
+        box2
+    </div>
+</div>
+```
+![10](/css/01/10.png)
+
+总结： BFC 是一个独立的布局区域，BFC 内部的元素布局与外部互不影响。
+
+## 本篇未完结，持续更新中~
+
+
+
+
+
+
+

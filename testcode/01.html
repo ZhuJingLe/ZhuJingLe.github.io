@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
-            height: 50vh;
-            width: 50vw;
+        .box {
+            width: 100px;
+            height: 100px;
             background-color: pink;
+            margin: 10px;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
     <div class="box">
         box
+    </div>
+    <div style="overflow: hidden;">
+        <div class="box2">
+            box2
+        </div>
     </div>
 </body>
 </html>
