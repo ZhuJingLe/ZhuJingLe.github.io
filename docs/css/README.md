@@ -1,4 +1,4 @@
-# 【CSS】面试题 
+# 【CSS】面试题 （共五题）
 
 ## 1. px 和 em 的区别？
 
@@ -220,6 +220,54 @@
 
 ![12](/css/01/12.png)
 
+## 5. 如何用 CSS 实现一个三角形？
+
+> 通过设置元素的 boder 值，并设置对应边的颜色透明，即可实现绘制一个三角形。
+
+1. 给元素边框设置为 40px，会得到一个宽高 80px 的正方形。
+
+```html
+<!-- css -->
+<style>
+    .box {
+        width: 0;
+        height: 0;
+        border: 40px solid pink;
+    }
+</style>
+<!-- html -->
+<div class="box"></div>
+```
+
+![13](/css/01/13.png)
+
+2. 尝试设置上边框颜色为透明。
+
+```html
+<style>
+    .box {
+        ...
+        border-top-color: transparent;
+    }
+</style>
+```
+得到：
+
+![14](/css/01/14.png)
+
+3. 尝试再将右边框颜色为透明。
+
+```html
+<style>
+    .box {
+        ...
+        border-right-color: transparent;
+    }
+</style>
+```
+得到一个三角形：
+
+![15](/css/01/15.png)
 
 
 
