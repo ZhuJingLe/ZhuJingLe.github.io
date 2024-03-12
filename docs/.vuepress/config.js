@@ -4,6 +4,10 @@ module.exports = {
     base: '/',
     title: "frontEnd blog",
     description: 'html, css, js, vue, node, react etc.',
+    markdown: {
+        anchor: { permalink: true },
+        toc: { includeLevel: [2] }
+    },
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
@@ -34,7 +38,7 @@ module.exports = {
                 sidebarDepth: 0,    
                 children: [
                     ['css/', '【css面试题】第一篇'], 
-                    ['css/README_02', '第二篇']
+                    ['css/README_02', '【css面试题】第二篇']
                 ]
             },
             {
