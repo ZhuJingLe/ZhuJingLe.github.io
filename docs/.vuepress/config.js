@@ -18,10 +18,12 @@ module.exports = {
                     return moment(timestamp).format('yyyy-MM-DD HH:mm:ss')
                 }
             }
-        ]
+        ],
+        '@vuepress/nprogress',
     ],
     themeConfig: {
         lastUpdated: '最后更新时间',
+        smoothScroll: true,
         logo: '/logo.png',
         displayAllHeaders: true,
         sidebar: [
