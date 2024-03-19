@@ -37,8 +37,8 @@ module.exports = {
                 path: '/css/',      
                 sidebarDepth: 0,    
                 children: [
-                    ['css/', '【css面试题】第一篇'], 
-                    ['css/README_02', '【css面试题】第二篇']
+                    ['css/', '第一篇【面试题】'], 
+                    ['css/README_02', '第二篇【面试题】']
                 ]
             },
             {
@@ -55,7 +55,7 @@ module.exports = {
                 path: '/js/',      
                 sidebarDepth: 0,    
                 children: [
-                    ['js/', '第一篇'], 
+                    ['js/', '第一篇【面试题】'], 
                     ['js/README_02', '第二篇【详解js原型】']
                 ]
             },
