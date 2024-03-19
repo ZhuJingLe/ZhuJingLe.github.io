@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      body {
-        padding: 20%;
-      }
-      .box {
-        width: 0;
-        height: 0;
-        border: 40px solid pink;
-        border-top-color: transparent;
-        border-right-color: transparent;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* padding: 20%; */
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    span {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="box"></div>
+  <script>
+    // console.log(typeof 100);           // "number"  
+    // console.log(typeof "Hello js");      // "string"  
+    // console.log(typeof true);         // "boolean"  
+    // console.log(typeof undefined);    // "undefined"  
+    // console.log(typeof null);         // "object" 
+    // console.log(typeof []);           // "object"
+    // console.log(typeof {});           // "object"  
+    // console.log(typeof function () { }); // "function"  
+    // console.log(typeof Symbol('js'));  // "symbol"  
+    // console.log(typeof BigInt(123));  // "bigint"
+    // console.log([] instanceof Array) // true。
+    // console.log(Array.isArray([])) // true
+
+    console.log(Object.prototype.toString.call(1)) // [object Number]
+    console.log(Object.prototype.toString.call(true)) // [object Boolean]
+    console.log(Object.prototype.toString.call('js')) // [object String]
+    console.log(Object.prototype.toString.call(null)) // [object Null]
+    console.log(Object.prototype.toString.call(undefined)) // [object Undefined]
+    console.log(Object.prototype.toString.call([])) // [object Array]
+    console.log(Object.prototype.toString.call({})) // [object Object]
+    console.log(Object.prototype.toString.call(function(){})) // [object Function]
+    console.log(Object.prototype.toString.call(Symbol('s'))) // [object Symbol]
+    console.log(Object.prototype.toString.call(BigInt(999))) // [object BigInt]
+
+    console.dir([])
+
+
+  </script>
 </body>
+
 </html>

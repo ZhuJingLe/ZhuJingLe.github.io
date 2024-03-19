@@ -56,7 +56,7 @@ module.exports = {
                 sidebarDepth: 0,    
                 children: [
                     ['js/', '第一篇'], 
-                    ['js/README_02', '第二篇']
+                    ['js/README_02', '第二篇【详解js原型】']
                 ]
             },
             {
