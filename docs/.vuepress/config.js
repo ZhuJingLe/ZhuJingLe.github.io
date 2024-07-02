@@ -55,8 +55,9 @@ module.exports = {
                 path: '/js/',      
                 sidebarDepth: 0,    
                 children: [
-                    ['js/', '第一篇【面试题】'], 
-                    ['js/README_02', '第二篇【详解js原型】']
+                    ['js/', '面试题01'], 
+                    ['js/README_02', '第二篇【详解js原型】'],
+                    ['js/README_03', '面试题02']
                 ]
             },
             {
