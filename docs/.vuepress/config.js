@@ -24,6 +24,18 @@ module.exports = {
             }
         ],
         '@vuepress/nprogress',
+        [
+            '@vssue/vuepress-plugin-vssue',
+            {
+                platform: 'github-v4', //v3的platform是github，v4的是github-v4
+                locale: 'zh', //语言
+                owner: 'ZhuJingLe', //github账户名
+                repo: 'ZhuJingLe.github.io', //github一个项目的名称
+                clientId: 'Ov23ctaihHvJResDxpbG',//注册的Client ID
+                clientSecret: 'edacae5d3a3fbc94793fe8578d4c03028a6f0685',//注册的Client Secret
+                autoCreateIssue:true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+            },
+        ]
     ],
     themeConfig: {
         lastUpdated: '最后更新时间',
@@ -31,18 +43,18 @@ module.exports = {
         logo: '/logo.png',
         displayAllHeaders: true,
         sidebar: [
-            ['/', '关于'],
+            ['/', '关于本站'],
             {
-                title: 'CSS篇',   
+                title: 'CSS',   
                 path: '/css/',      
                 sidebarDepth: 0,    
                 children: [
-                    ['css/', '第一篇【面试题】'], 
-                    ['css/README_02', '第二篇【面试题】']
+                    ['css/', '第一篇'], 
+                    ['css/README_02', '第二篇']
                 ]
             },
             {
-                title: 'HTML篇',   
+                title: 'HTML',   
                 path: '/html/',      
                 sidebarDepth: 0,    
                 children: [
@@ -51,17 +63,17 @@ module.exports = {
                 ]
             },
             {
-                title: 'javascript篇',   
+                title: 'javascript',   
                 path: '/js/',      
                 sidebarDepth: 0,    
                 children: [
-                    ['js/', '面试题01'], 
-                    ['js/README_02', '第二篇【详解js原型】'],
-                    ['js/README_03', '面试题02']
+                    ['js/', '第一篇'], 
+                    ['js/README_02', '第二篇'],
+                    ['js/README_03', '第三篇']
                 ]
             },
             {
-                title: 'vue篇',   
+                title: 'vue',   
                 path: '/vue/',      
                 sidebarDepth: 0,    
                 children: [
@@ -70,7 +82,7 @@ module.exports = {
                 ]
             },
             {
-                title: 'react篇',   
+                title: 'react',   
                 path: '/react/',      
                 sidebarDepth: 0,    
                 children: [
@@ -79,7 +91,7 @@ module.exports = {
                 ]
             },
             {
-                title: '后端篇(java、node、python)等',   
+                title: 'python',   
                 path: '/backend/',      
                 sidebarDepth: 0,    
                 children: [

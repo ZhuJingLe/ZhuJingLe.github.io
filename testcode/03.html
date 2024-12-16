@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw a Third of a Circle</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: blue;
+            clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* Clips the element to create a third of a circle */
+            transform: rotate(-30deg); /* Adjust rotation to position correctly */
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+</body>
+</html>
