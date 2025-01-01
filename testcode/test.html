@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" value="" id="input">
+  <script>
+    let logTime = 0;
+    const input = document.getElementById('input');
+    input.addEventListener('input', debounce(handleInput, 1000));
+
+    function handleInput(e) {
+      if(logTime) {
+        const now = Date.now();
+        console.log(now - logTime, '毫秒');
+      }
+      logTime = Date.now();
+      console.log(e.target.value, '触发了input事件...');
+    }
+
+    // 防抖函数
+    function debounce(fun, delay) {
+      let timer = null;
+      return function() {
+        timer && clearTimeout(timer);
+        timer = setTimeout(() => {
+          console.log(this, arguments, '....');
+          fun.apply(this, arguments);
+        }, delay)
+      }
+    }
+
+    // 节流函数
+    function throttle(fun, delay) {
+      let timer = null;
+      return function() {
+        if (timer) return;
+        timer = setTimeout(() => {
+          clearTimeout(timer);
+          timer = null;
+          fun.apply(this, arguments);
+        }, delay)
+      }
+    }
+  </script>
+</body>
+</html>
