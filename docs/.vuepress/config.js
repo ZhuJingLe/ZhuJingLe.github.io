@@ -70,7 +70,7 @@ module.exports = {
                     ['js/', '第一篇'], 
                     ['js/README_02', '第二篇'],
                     ['js/README_03', '第三篇'],
-                    ['js/README_04', '第三篇-手写面试题'],
+                    ['js/README_04', '第四篇-手写面试题'],
                 ]
             },
             {
