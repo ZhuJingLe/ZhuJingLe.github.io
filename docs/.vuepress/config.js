@@ -88,6 +88,14 @@ module.exports = {
                 ]
             },
             {
+                title: '数据结构与算法',   
+                path: '/dataStructure-algorithm/',      
+                sidebarDepth: 0,    
+                children: [
+                    ['/dataStructure-algorithm/', '排序'], 
+                ]
+            },
+            {
                 title: '其他',   
                 path: '/other/',      
                 sidebarDepth: 0,    
@@ -95,7 +103,7 @@ module.exports = {
                     ['other/', '第一篇'], 
                     ['other/README_02', '第二篇']
                 ]
-            }
+            },
         ]
     }
 }
