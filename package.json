@@ -7,14 +7,16 @@
   "author": "zhujingle",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "devDependencies": {
     "@vuepress/plugin-nprogress": "^1.9.10",
     "vuepress": "^1.9.10"
   },
   "dependencies": {
+    "@vssue/api-github-v4": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8",
     "moment": "^2.30.1"
   }
 }

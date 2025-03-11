@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Function.prototype.myCall = function(context, ...args) {
+    //   context = context || globalThis
+    //   const fnSymbol = Symbol();
+    //   context[fnSymbol] = this;
+    //   const res = context[fnSymbol](...args)
+    //   delete context[fnSymbol]
+    //   return res;
+    // }
+
+    // Function.prototype.myApply = function(context, args) {
+    //   context = context || globalThis
+    //   let fnSymbol = Symbol()
+    //   context[fnSymbol] = this;
+    //   const res = args ? context[fnSymbol](...args) : context[fnSymbol]()
+    //   delete context[fnSymbol]
+    //   return res
+    // }
+
+    Function.prototype.myBind = function(context, ...args) {
+      let fn = this
+      return function(...newArgs) {
+        const allArgs = [...newArgs, ...args]
+        console.log(this);
+        return fn.apply(this instanceof fn ? this : context, allArgs)
+      }
+    }
+
+    function test() {
+      console.log(this, 'this...');
+    }
+    test.myBind({}, [1, 2, 3, 4])()
+  </script>
+</body>
+</html>
