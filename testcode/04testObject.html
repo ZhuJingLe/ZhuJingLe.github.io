@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    // console.log(Object('A'));
+    // console.log(Object);
+    // console.log(Object() == Object());
+    // let a = Object();
+    // a.name = 'zhujingle'
+    // a.age = 18;
+    // a.address = 'shanghai city';
+    // console.log(a);
+    // let b = new Object();
+    // b.name = 'tom';
+    // b.age = 20;
+    // console.log(b);
+
+    // let obj = {
+    //   name: '',
+    //   age: 20,
+    //   address:'shanghai city'
+    // }
+    // Object.defineProperty(obj, 'name', {
+    //   value: "jack",
+    //   enumerable: false,
+    //   writable: true,
+    //   configurable: false,
+    // })
+
+    // for (const key of obj) {
+    //   // console.log(key, obj[key]);
+    // }
+    // delete obj.name;
+    // console.log(obj);
+    // console.log(obj, '....');
+    // Object.defineProperty(obj, 'name', {
+    //   value: "jack",
+    //   writable: true,
+    //   enumerable: true,
+    //   configurable: true,
+    // })
+    // obj.name = 'tom';
+    // console.log(obj, '....');
+    // obj.name = 'tom';
+    // console.log(obj, '....');
+    /*
+      writable
+      enumerable
+      configurable
+    */
+    // let obj = {}
+    // let _name = 'jack'
+    // Object.defineProperty(obj, 'name', {
+    //   get() {
+    //     return _name;
+    //   },
+    //   set(value) {
+    //     _name = value + '123'
+    //   },
+    //   // enumerable: true,
+    // })
+    // obj.name = 'tom';
+    // console.log(obj.name);
+    // for (const key in obj) {
+    //   console.log(key);
+    // }
+    // delete obj.name;
+
+
+
+
+    // let obj = {
+    //   name: 'jack',
+    //   age: 20,
+    //   address:'shanghai city'
+    // }
+    // Object.defineProperty(obj, 'name', {
+    //   value: "tom",
+    //   // enumerable: false,
+    // })
+    // console.log(obj);
+    // delete obj.name;
+    // obj.name ='zhujingle'
+    // console.log(obj, '....');
+    // for (const key in obj) {
+    //   console.log(key, obj[key]);
+    // }
+
+    // let obj = {
+    //   _address: "shanghai city"
+    // }
+    // Object.defineProperties(obj, {
+    //   name: {
+    //     value: "jack",
+    //     enumerable: true,
+    //     // writable: true,
+    //     // configurable: true,
+    //   },
+    //   age: {
+    //     value: 20,
+    //   },
+    //   address: {
+    //     get() {
+    //       return this._address
+    //     },
+    //     set(value) {
+    //       this._address = value
+    //       console.log("set address", value)
+    //     },
+    //     enumerable: true,
+    //   }
+    // })
+    // console.log(obj);
+    // obj.address = "beijing city"
+    // console.log(obj);
+    // console.log(obj.address);
+
+
+    let obj = {
+      name: 'jack',
+      age: 20,
+      address:'shanghai city',
+      _age: 18
+    }
+    // Object.defineProperty(obj, 'name', {
+    //   value: 'tom'
+    // })
+    // console.log(Object.getOwnPropertyDescriptor(obj, 'name'));
+
+    Object.defineProperties(obj, {
+      name: {
+        value: 'tom',
+      },
+      age: {
+        value: 18,
+        get() {
+          return this._age
+        },
+        set(value) {
+          this._age = value
+        }
+      }
+    })
+    console.log(Object.getOwnPropertyDescriptor(obj, 'name'));
+
+  </script>
+</body>
+</html>
