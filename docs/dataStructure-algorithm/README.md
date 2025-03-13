@@ -31,3 +31,20 @@ function bubbleSort(arr) {
   return arr;
 }
 ```
+
+## 3. 插入排序
+```js
+// 在未排序的区域选择一个元素，与已经排序的元素进行比较找到合适的位置插入，并且插入位置后面的元素都要后移一位。
+function insertionSort(arr) {
+  for(let i = 1; i < arr.length; i++) {
+    let currentVal = arr[i];
+    let j = i - 1;
+    while(j >=0 && arr[j] > currentVal) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = currentVal;
+  }
+  return arr;
+}
+```
