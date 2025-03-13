@@ -13,5 +13,21 @@ function selectionSort(arr) {
     }
     [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
   }
+  return arr;
+}
+```
+
+## 2. 冒泡排序
+```js
+// 连续比较相邻的两个元素，每一轮找出一个最大（小）值，这个过程就像气泡从底部升到顶部一样，因此得名冒泡排序。
+function bubbleSort(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+      }
+    }
+  }
+  return arr;
 }
 ```
