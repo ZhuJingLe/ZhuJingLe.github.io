@@ -48,3 +48,34 @@ function insertionSort(arr) {
   return arr;
 }
 ```
+## 归并排序
+```js
+// 使用递归将数组分成两个子数组进行合并排序
+function mergeSort(arr) {
+  if(arr.length > 1) {
+    let middle = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, middle));
+    let right = mergeSort(arr.slice(middle));
+    return merge(left, right)
+  } 
+  return arr;
+}
+function merge(left, right) {
+  let i = 0;
+  let j = 0;
+  let result = [];
+  while(i < left.length && j < right.length) {
+    if(left[i] < right[j]) {
+      result.push(left[i])
+      i++;
+    } else {
+      result.push(right[j])
+      j++;
+    }
+  }
+  return result.concat(i < left.length? left.slice(i): right.slice(j))
+}
+// test
+let arr = [990, 56, 34, 56, 76, 234, 432, 99]
+console.log(mergeSort(arr));
+```
