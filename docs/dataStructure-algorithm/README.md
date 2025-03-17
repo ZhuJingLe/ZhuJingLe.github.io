@@ -48,7 +48,8 @@ function insertionSort(arr) {
   return arr;
 }
 ```
-## 归并排序
+
+## 4. 归并排序
 ```js
 // 使用递归将数组分成两个子数组进行合并排序
 function mergeSort(arr) {
