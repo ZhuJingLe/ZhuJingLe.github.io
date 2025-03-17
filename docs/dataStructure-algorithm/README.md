@@ -80,3 +80,42 @@ function merge(left, right) {
 let arr = [990, 56, 34, 56, 76, 234, 432, 99]
 console.log(mergeSort(arr));
 ```
+
+## 快速排序
+```js
+function quickSort(arr) {
+  return quick(arr, 0, arr.length - 1);
+}
+function quick(arr, left, right) {
+  if(arr.length > 1) {
+    let middle = Math.floor((left + right) / 2);
+    let midVal = arr[middle];
+    let i = left;
+    let j = right;
+
+    while(i <= j) {
+      while(arr[i] < midVal) {
+        i++
+      }
+      while(arr[j] > midVal) {
+        j--;
+      }
+      if(i <= j) {
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+        i++;
+        j--;
+      }
+    }
+    if(left < i - 1) {
+      quick(arr, left, i - 1)
+    }
+    if(i < right) {
+      quick(arr, i, right)
+    }
+  }
+  return arr;
+}
+// test
+let arr = [2, 4, 1, 6, 2, 7, 2, 5, 9, 12, 7, 100]
+console.log(quickSort(arr));
+```
